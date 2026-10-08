@@ -1,0 +1,25 @@
+{{ define "guest" }}
+<!DOCTYPE html>
+<html lang="en">
+{{ template "head" }}
+<body>
+    <div>
+        <h1>Гостевая книга</h1>
+        <form action="/submit" method="POST">
+            <input name="name" placeholder="Имя" required>
+            <textarea name="message" placeholder="Сообщение" required></textarea>
+            <button>Отправить</button>
+        </form>
+        <hr>
+        {{range .}}
+        <p>
+            <b>{{.Name}}</b>: {{.Message}} 
+            <small>{{ .Timestamp.Format "02.01.2006 15:04:05" }}</small>
+        </p>
+        {{else}}
+        <p>Записей нет.</p>
+    </div>
+</body>
+</html>
+{{ end }}
+{{ end }}

@@ -1,0 +1,45 @@
+{{ define "index"}}
+<!DOCTYPE html>
+<html lang="en">
+{{ template "head" . }}
+<body>
+	<div style="max-width: 600px;">
+		<div class="plate">
+			<div style="float: right; margin-right: 10px; margin-bottom: 10px;">
+				<img src="/images/src/taskmgr.ico">
+			</div>
+			<h1>Name: {{ .Name }}<br>
+				Email: {{ .ContactEmail }}
+			</h1>
+			<h2>Languages:</h2>
+			<div>
+				{{ range .Languages }}
+				<img src="images/src/{{ .Name }}.svg">
+				{{ end }}
+			</div>
+			<h2>Databases:</h2>
+			<div>
+				{{ range .Databases }}
+				<img src="images/src/{{ .Name }}.svg">
+				{{ end }}
+			</div>
+			<p>Hello! I {{ .Title }} WebCore, Frutiger Aero, and Y2K styles And sometimes I also write Minecraft plugins, mostly for older versions</p>
+		</div>
+		<div class="plate">
+			<h1>Гостевая книга:</h1>
+			<a href="/guest">Расписаться</a>
+			<div>
+				{{ range .Entries }}
+				<p>
+					<b>{{ .Name }}</b>: {{ .Message }}
+					<small>{{ .Timestamp.Format "02.01.2006 15:04:05" }}</small>
+				</p>
+				{{ else }}
+				<p>Сообщений пока нет.</p>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+{{ end }}

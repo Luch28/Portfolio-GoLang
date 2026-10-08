@@ -26,8 +26,8 @@
 			<p>Hello! I {{ .Title }} WebCore, Frutiger Aero, and Y2K styles And sometimes I also write Minecraft plugins, mostly for older versions</p>
 		</div>
 		<div class="plate">
-			<h1>Гостевая книга:</h1>
-			<a href="/guest">Расписаться</a>
+			<h1>Guest book:</h1>
+			<a href="/guest">Sign</a>
 			<div>
 				{{ range .Entries }}
 				<p>
@@ -35,7 +35,7 @@
 					<small>{{ .Timestamp.Format "02.01.2006 15:04:05" }}</small>
 				</p>
 				{{ else }}
-				<p>Сообщений пока нет.</p>
+				<p>There are no messages yet.</p>
 				{{ end }}
 			</div>
 		</div>

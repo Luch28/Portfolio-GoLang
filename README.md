@@ -3,4 +3,4 @@
 
 
 A simple single-page website in Go with a guest book where anyone can leave a message. <<I’ll add the working link later>>
-*I think I’ll add WebRing from the 88*31 banners to it later.
+I think I’ll add WebRing from the 88*31 banners to it later.

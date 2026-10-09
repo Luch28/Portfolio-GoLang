@@ -4,11 +4,11 @@
 {{ template "head" }}
 <body>
     <div>
-        <h1>Гостевая книга</h1>
+        <h1>Guest book</h1>
         <form action="/submit" method="POST">
             <input name="name" placeholder="Имя" required>
             <textarea name="message" placeholder="Сообщение" required></textarea>
-            <button>Отправить</button>
+            <button>send</button>
         </form>
         <hr>
         {{range .}}
